@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a,code{
+  text-decoration: none;
+  color: inherit !important;
+}
+
+h1{
+  color: #444;
+  font-weight: normal;
+}
+h2{
+  color: #444;
+  font-weight: bold;
+}
+h4{
+  color: #999;
+  font-weight: normal;
+}
