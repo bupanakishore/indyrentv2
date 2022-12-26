@@ -6,7 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { ReactComponent as Members } from "../../assets/icons/familyIcon.svg";
 import { ReactComponent as Income } from "../../assets/icons/incomeIcon.svg";
 import { ReactComponent as Rent } from "../../assets/icons/renticon.svg";
@@ -49,7 +49,9 @@ const TenantHome = ({ navigate }) => {
         </Grid>
         <Grid item width={"50%"} padding="1rem">
           <Income />
-          <Typography variant="h5">Household Income</Typography>
+          <Link to={"/tenant/income"}>
+            <Typography variant="h5">Household Income</Typography>
+          </Link>
           <br />
           <Grid container>
             <CircularProgress color="tenant" size={24} />
@@ -58,7 +60,9 @@ const TenantHome = ({ navigate }) => {
         </Grid>
         <Grid item width={"50%"} padding="1rem">
           <Rent />
-          <Typography variant="h5">Rental Assistance</Typography>
+          <Link to={"/tenant/rent"}>
+            <Typography variant="h5">Rental Assistance</Typography>
+          </Link>
           <br />
           <Grid container>
             <CircularProgress color="tenant" size={24} />
@@ -67,7 +71,9 @@ const TenantHome = ({ navigate }) => {
         </Grid>
         <Grid item width={"50%"} padding="1rem">
           <Support />
-          <Typography variant="h5">Additional Support</Typography>
+          <Link to={"/tenant/support"}>
+            <Typography variant="h5">Additional Support</Typography>
+          </Link>
           <br />
           <Grid container>
             <CircularProgress color="tenant" size={24} />

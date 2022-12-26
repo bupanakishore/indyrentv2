@@ -10,8 +10,9 @@ import {
 import React from "react";
 import { useState } from "react";
 import { ArrowLeft, Plus } from "react-feather";
+import { withNavigate } from "../../common/WithNavigate";
 
-const AddMember = () => {
+const AddMember = ({navigate}) => {
   const [isHead, setHead] = useState(true);
   return (
     <Grid
@@ -144,4 +145,4 @@ const AddMember = () => {
   );
 };
 
-export default AddMember;
+export default withNavigate(AddMember);
