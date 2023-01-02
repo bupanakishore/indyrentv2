@@ -7,6 +7,16 @@ import QuestionsPage from "../components/apply/pages/QuestionsPage";
 import Dashboard from "../components/dashboard/Dashboard";
 import AddProperty from "../components/dashboard/pages/AddProperty";
 import ManageAddress from "../components/dashboard/pages/ManageAddress";
+import BenifitAddress from "../components/landlord/benifitAddress";
+import ConfirmDetailsLandlord from "../components/landlord/confirmDetails";
+import EnterEvictionCase from "../components/landlord/enterEvictionCase";
+import EvictionCase from "../components/landlord/evictionCase";
+import StartApplication from "../components/landlord/startApplication";
+import TenantAddress from "../components/landlord/tenantDetails/tenantAddress";
+import TenantDetails from "../components/landlord/tenantDetails/tenantDetails";
+import TenantName from "../components/landlord/tenantDetails/tenantName";
+import TenantContact from "../components/landlord/tenantDetails/contactDetails";
+import TenantDue from "../components/landlord/tenantDue";
 import Onboarding from "../components/onboarding/Onboarding";
 import AddAddress from "../components/onboarding/pages/AddAddress";
 import ConfirmDetails from "../components/onboarding/pages/ConfirmDetails";
@@ -39,6 +49,15 @@ import EnterEmail from "../components/tenant/submitApplication/enterEmail";
 import Selfcert from "../components/tenant/submitApplication/selfcert";
 import SubmitAppLayout from "../components/tenant/submitApplication/submitApp";
 import TenantHome from "../components/tenant/TenantHome";
+import RecievePay from "../components/landlord/rentAgreement/recievePay";
+import ExpiredLease from "../components/landlord/rentAgreement/expiredLease";
+import RentAgreement from "../components/landlord/rentAgreement/rentAgreement";
+import SelectDues from "../components/landlord/rentAgreement/selectDues";
+import UploadLease from "../components/landlord/rentAgreement/uploadLease";
+import Confirmation from "../components/landlord/confirmation/confirmation";
+import ConfirmForm from "../components/landlord/confirmation/confirmForm";
+import W9Form from "../components/landlord/confirmation/w9Form";
+import SuccessForm from "../components/landlord/confirmation/successForm";
 
 const Routing = () => {
   return (
@@ -83,6 +102,7 @@ const Routing = () => {
           element={<CommunityCode />}
         />
       </Route>
+
       <Route path="/tenant/submitapplication" element={<SubmitAppLayout />}>
         <Route index element={<EnterEmail />} />
         <Route
@@ -101,10 +121,65 @@ const Routing = () => {
 
       <Route path="/tenant/sorry" element={<NotEligiblePage />} />
       <Route path="/tenant/success" element={<ApplicationSuccessPage />} />
+
+      {/* Landord routes */}
       <Route path="/landlord/dashboard" element={<Dashboard />}>
         <Route index element={<ManageAddress />} />
       </Route>
       <Route path="/landlord/addproperty" element={<AddProperty />} />
+
+      <Route path="/landlord/evictioncase" element={<EvictionCase />} />
+      <Route
+        path="/landlord/enterevictioncase"
+        element={<EnterEvictionCase />}
+      />
+      <Route path="/landlord/tenantdue" element={<TenantDue />} />
+      <Route
+        path="/landlord/confirmdetails"
+        element={<ConfirmDetailsLandlord />}
+      />
+      <Route path="/landlord/benifitaddress" element={<BenifitAddress />} />
+      <Route path="/landlord/startapplication" element={<StartApplication />} />
+
+      <Route path="/landlord/tenantdetails" element={<TenantDetails />}>
+        <Route index element={<TenantName />} />
+        {/* name */}
+        <Route
+          path="/landlord/tenantdetails/contact"
+          element={<TenantContact />}
+        />
+        <Route
+          path="/landlord/tenantdetails/address"
+          element={<TenantAddress />}
+        />
+      </Route>
+
+      <Route path="/landlord/rentagreement" element={<RentAgreement />}>
+        <Route index element={<RecievePay />} />
+        {/* recieve payment */}
+        <Route
+          path="/landlord/rentagreement/lease"
+          element={<ExpiredLease />}
+        />
+        <Route
+          path="/landlord/rentagreement/selectdues"
+          element={<SelectDues />}
+        />
+        <Route
+          path="/landlord/rentagreement/uploadlease"
+          element={<UploadLease />}
+        />
+      </Route>
+
+      <Route path="/landlord/confirmation" element={<Confirmation />}>
+        <Route index element={<ConfirmForm />} />
+        {/* confirmation */}
+        <Route path="/landlord/confirmation/w9" element={<W9Form />} />
+        <Route
+          path="/landlord/confirmation/success"
+          element={<SuccessForm />}
+        />
+      </Route>
     </Routes>
   );
 };

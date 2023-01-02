@@ -5,13 +5,16 @@ export const theme = createTheme({
     tenant: {
       main: "#A718DA",
       contrastText: "#fff",
+      bg:"#FBF5EC"
     },
     bgtenant: {
       main: "#FBF5EC",
     },
     landlord: {
       main: "#258603",
+      light:"rgba(37, 134, 3, 0.1)",
       contrastText: "#fff",
+      bg:"#FBF5EB"
     },
     bglandlord: {
       main: "#FBF5EB",
